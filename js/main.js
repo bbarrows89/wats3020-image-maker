@@ -1,4 +1,4 @@
-/* WATS 3020 Image Maker Code */
+/* Image Maker Code */
 
 //////////////////////////////////////////////////
 // ImageMaker Class Definition               /////
