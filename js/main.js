@@ -33,7 +33,7 @@ class ImageMaker {
         // the image, then you will need to make attributes for each of those
         // elements here.
     }
-    
+
     drawPreview(){
       this.imagePreview.style.backgroundImage = 'url(images/${this.backgroundInput.value})';
       this.topText.innerHTML = this.topTextInput.value;
@@ -47,10 +47,6 @@ class ImageMaker {
 }
 
 let imageMaker = new ImageMaker();
-
-//////////////////////////////////////////////////
-// Do Not Edit Below This Line               /////
-////////////////////////////////////////////////////////////////////////
 
 // This function uses the `domtoimage` module to render an image of the
 // `#image-preview` element and prompts the user to download the created image.
@@ -73,7 +69,7 @@ function generateImage(elementID="image-preview", height="800px", width="1280px"
 }
 
 
-// This function creates event listeners for each every form field added to
+// This function creates event listeners for each form field added to
 // the image maker form as well as the submit button that generates an image
 // for download. New form inputs can be created and will automatically have
 // a "change" listener added to them.
