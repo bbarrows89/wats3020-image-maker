@@ -33,15 +33,13 @@ class ImageMaker {
         // the image, then you will need to make attributes for each of those
         // elements here.
     }
+    
     drawPreview(){
-        // TODO: Update the `background-image` CSS property for `this.imagePreview`.
-
-        // TODO: Update the `innerHTML` of `this.topText`.
-
-        // TODO: Update the `innerHTML` of `this.bottomText`
-
-
+      this.imagePreview.style.backgroundImage = 'url(images/${this.backgroundInput.value})';
+      this.topText.innerHTML = this.topTextInput.value;
+      this.bottomText.innerHTML = this.bottomTextInput.value;
     }
+
     downloadImage(){
         this.drawPreview();
         generateImage();
