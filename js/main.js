@@ -23,19 +23,13 @@ class ImageMaker {
         this.bottomText = document.createElement('p');
         this.bottomText.setAttribute('class', 'bottom-text');
         this.imagePreview.appendChild(this.bottomText);
-        // This class also needs to use the form fields to read user input. Set
-        // those up for future use, too.
 
-        // TODO: Select the `input` element with the `name` attribute "backgroundImage"
-        this.backgroundInput = ;
+        // give object access to user input from form
+        this.backgroundInput = document.querySelector('select[name="background-image"]');
+        this.topTextInput = document.querySelector('input[name="topText"]');
+        this.bottomTextInput = document.querySelector('input[name="bottomText');
 
-        // TODO: Select the `input` element with the `name` attribute "topText"
-        this.topTextInput = ;
-
-        // TODO: Select the `input` element with the `name` attribute "bottomText"
-        this.bottomTextInput = ;
-
-        // NOTE: If you add additional form fields to modify other aspects of
+        // NOTE: If adding additional form fields to modify other aspects of
         // the image, then you will need to make attributes for each of those
         // elements here.
     }
