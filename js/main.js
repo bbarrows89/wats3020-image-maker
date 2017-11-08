@@ -14,8 +14,8 @@ class ImageMaker {
         // When this class is instantiated, the `constructor()` method is executed.
         // TODO: Set up attributes that point to the HTML elements we wish to work with.
 
-        // TODO: Select the `#image-preview` div using any document selector method.
-        this.imagePreview = ;
+        // allow users to view a preview of images
+        this.imagePreview = document.getElementById('image-preview');
 
         // TODO: create a new `<p>` element called `this.topText`
         this.topText = ;
