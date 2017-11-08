@@ -25,7 +25,7 @@ class ImageMaker {
 		this.imagePreview.appendChild(this.bottomText);
 
 		// give object access to user input from form
-		this.backgroundInput = document.querySelector('select[name="background-image"]');
+		this.backgroundInput = document.querySelector('select[name="backgroundImage"]');
 		this.topTextInput = document.querySelector('input[name="topText"]');
 		this.bottomTextInput = document.querySelector('input[name="bottomText');
 
