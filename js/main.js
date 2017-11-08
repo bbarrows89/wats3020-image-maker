@@ -35,7 +35,7 @@ class ImageMaker {
 	}
 
 	drawPreview(){
-		this.imagePreview.style.backgroundImage = 'url(images/${this.backgroundInput.value})';
+		this.imagePreview.style.backgroundImage = `url(images/${this.backgroundInput.value})`;
 		this.topText.innerHTML = this.topTextInput.value;
 		this.bottomText.innerHTML = this.bottomTextInput.value;
 	}
