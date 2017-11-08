@@ -16,18 +16,18 @@ class ImageMaker {
 
         // allow users to view a preview of images
         this.imagePreview = document.getElementById('image-preview');
+       
+        // create topText, append to imagePreview
+        this.topText = document.createElement('p');
 
-        // TODO: create a new `<p>` element called `this.topText`
-        this.topText = ;
-        // TODO: Add a `class` attribute to `this.topText` that contains the classname "top-text".
+        this.topText.setAttribute('class', 'top-text');
 
-        // TODO: Append `this.topText` as a child element to `this.imagePreview`
+        this.imagePreview.appendChild(this.topText);
 
-
-        // TODO: create a new `<p>` element called `this.bottomText`
-        this.bottomText = ;
+        // repeat process to create bottomText
+        this.bottomText = document.createElement('p');
         // TODO: Add a `class` attribute to `this.bottomText` that contains the classname "bottom-text".
-
+        this.bottomText.setAttribute('class', 'bottom-text');
         // TODO: Append `this.bottomText` as a child element to `this.imagePreview`
 
         // This class also needs to use the form fields to read user input. Set
