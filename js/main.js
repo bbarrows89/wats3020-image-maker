@@ -34,12 +34,6 @@ class ImageMaker {
         // elements here.
     }
     drawPreview(){
-        // This function is called whenever a user changes one of the form fields
-        // and whenever an image is generated for download. This function must
-        // update the style attributes and innerHTML content of the HTML
-        // elements selected in the `constructor()` of this class in order to
-        // update `this.imagePreview`.
-
         // TODO: Update the `background-image` CSS property for `this.imagePreview`.
 
         // TODO: Update the `innerHTML` of `this.topText`.
