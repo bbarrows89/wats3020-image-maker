@@ -11,25 +11,18 @@
 
 class ImageMaker {
     constructor(){
-        // When this class is instantiated, the `constructor()` method is executed.
-        // TODO: Set up attributes that point to the HTML elements we wish to work with.
-
         // allow users to view a preview of images
         this.imagePreview = document.getElementById('image-preview');
        
         // create topText, append to imagePreview
         this.topText = document.createElement('p');
-
         this.topText.setAttribute('class', 'top-text');
-
         this.imagePreview.appendChild(this.topText);
 
         // repeat process to create bottomText
         this.bottomText = document.createElement('p');
-        // TODO: Add a `class` attribute to `this.bottomText` that contains the classname "bottom-text".
         this.bottomText.setAttribute('class', 'bottom-text');
-        // TODO: Append `this.bottomText` as a child element to `this.imagePreview`
-
+        this.imagePreview.appendChild(this.bottomText);
         // This class also needs to use the form fields to read user input. Set
         // those up for future use, too.
 
