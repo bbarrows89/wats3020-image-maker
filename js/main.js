@@ -10,40 +10,40 @@
 ////////////////////////////////////////////////////////////////////////
 
 class ImageMaker {
-    constructor(){
-        // allow users to view a preview of images
-        this.imagePreview = document.getElementById('image-preview');
+	constructor(){
+		// allow users to view a preview of images
+		this.imagePreview = document.getElementById('image-preview');
        
-        // create topText, append to imagePreview
-        this.topText = document.createElement('p');
-        this.topText.setAttribute('class', 'top-text');
-        this.imagePreview.appendChild(this.topText);
+		// create topText, append to imagePreview
+		this.topText = document.createElement('p');
+		this.topText.setAttribute('class', 'top-text');
+		this.imagePreview.appendChild(this.topText);
 
-        // repeat process to create bottomText
-        this.bottomText = document.createElement('p');
-        this.bottomText.setAttribute('class', 'bottom-text');
-        this.imagePreview.appendChild(this.bottomText);
+		// repeat process to create bottomText
+		this.bottomText = document.createElement('p');
+		this.bottomText.setAttribute('class', 'bottom-text');
+		this.imagePreview.appendChild(this.bottomText);
 
-        // give object access to user input from form
-        this.backgroundInput = document.querySelector('select[name="background-image"]');
-        this.topTextInput = document.querySelector('input[name="topText"]');
-        this.bottomTextInput = document.querySelector('input[name="bottomText');
+		// give object access to user input from form
+		this.backgroundInput = document.querySelector('select[name="background-image"]');
+		this.topTextInput = document.querySelector('input[name="topText"]');
+		this.bottomTextInput = document.querySelector('input[name="bottomText');
 
-        // NOTE: If adding additional form fields to modify other aspects of
-        // the image, then you will need to make attributes for each of those
-        // elements here.
-    }
+		// NOTE: If adding additional form fields to modify other aspects of
+		// the image, then you will need to make attributes for each of those
+		// elements here.
+	}
 
-    drawPreview(){
-      this.imagePreview.style.backgroundImage = 'url(images/${this.backgroundInput.value})';
-      this.topText.innerHTML = this.topTextInput.value;
-      this.bottomText.innerHTML = this.bottomTextInput.value;
-    }
+	drawPreview(){
+		this.imagePreview.style.backgroundImage = 'url(images/${this.backgroundInput.value})';
+		this.topText.innerHTML = this.topTextInput.value;
+		this.bottomText.innerHTML = this.bottomTextInput.value;
+	}
 
-    downloadImage(){
-        this.drawPreview();
-        generateImage();
-    }
+	downloadImage(){
+		this.drawPreview();
+		generateImage();
+	}
 }
 
 let imageMaker = new ImageMaker();
@@ -52,20 +52,20 @@ let imageMaker = new ImageMaker();
 // `#image-preview` element and prompts the user to download the created image.
 // It is possible to use the `height` and `width` parameters to alter the size
 // of the rendered image.
-function generateImage(elementID="image-preview", height="800px", width="1280px"){
-    let htmlTemplate = document.getElementById(elementID);
-    htmlTemplate.style.height = height;
-    htmlTemplate.style.width = width;
-    let imageName = "image_" + Date.now();
+function generateImage(elementID='image-preview', height='800px', width='1280px'){
+	let htmlTemplate = document.getElementById(elementID);
+	htmlTemplate.style.height = height;
+	htmlTemplate.style.width = width;
+	let imageName = 'image_' + Date.now();
 
-    // Generate image and prompt download for user.
-    domtoimage.toJpeg(htmlTemplate, { quality: 0.95 })
-        .then(function (dataUrl) {
-            var link = document.createElement('a');
-            link.download = imageName;
-            link.href = dataUrl;
-            link.click();
-        });
+	// Generate image and prompt download for user.
+	domtoimage.toJpeg(htmlTemplate, { quality: 0.95 })
+		.then(function (dataUrl) {
+			var link = document.createElement('a');
+			link.download = imageName;
+			link.href = dataUrl;
+			link.click();
+		});
 }
 
 
@@ -80,17 +80,17 @@ function generateImage(elementID="image-preview", height="800px", width="1280px"
 // The submit listener on the form interrupts the regular form processing of the
 // browser and calls the `imageMaker.downloadImage()` method.
 function applyEventListeners(){
-    let inputs = document.querySelectorAll('input, select, textarea');
-    for (input of inputs){
-        input.addEventListener("change", function(event){
-            imageMaker.drawPreview();
-        })
-    }
-    let imageForm = document.querySelector('form');
-    imageForm.addEventListener('submit', function(event){
-        event.preventDefault();
-        imageMaker.downloadImage();
-    })
+	let inputs = document.querySelectorAll('input, select, textarea');
+	for (input of inputs){
+		input.addEventListener('change', function(event){
+			imageMaker.drawPreview();
+		});
+	}
+	let imageForm = document.querySelector('form');
+	imageForm.addEventListener('submit', function(event){
+		event.preventDefault();
+		imageMaker.downloadImage();
+	});
 }
 
 // Apply event listeners on page load.
